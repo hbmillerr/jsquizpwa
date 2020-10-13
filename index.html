@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Quiz</title>
+		<script src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="manifest" href="manifest.json">
+		
+		<link rel="apple-touch-icon" href="/icon/icon-192x192.png">
+		<meta name="theme-color" content="#4a90e2"/>
+	</head>
+	<!--<div>Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+
+	<body onload="initialize()">
+		<div id="page1">
+			<h2>Quiz Project</h2>
+			<p id="numQuestion">Instructions go here.</p>
+
+			<div id="grid-container">
+				<div class="header">
+					<div id="question">The Question</div>
+				</div>
+
+				<div class="left">
+					<div id="container">
+						<br>
+						<input type="radio" id="one" onchange="changed('a')" name="input">
+						<label for="one" id="a"></label><br>
+
+						<input type="radio" id="two" onchange="changed('b')" name="input">
+						<label for="two" id="b"></label><br>
+
+						<input type="radio" id="three" onchange="changed('c')" name="input">
+						<label for="three" id="c"></label><br>
+
+						<input type="radio" id="four" onchange="changed('d')" name="input">
+						<label for="four" id="d"></label><br>
+					</div>
+				</div> 
+
+				<div class="right"> <img id="image" src="images/" alt=""></div>
+				
+				<div id="footer">
+					<button onclick="previousQuestion()">Previous Question</button>
+					<button id="next" onclick="nextQuestion()">Next Question</button>
+				</div>
+			</div>
+		</div>
+		
+		<div id="page2">
+			<div id="resultContainer">
+				<h1> Results </h1>
+				
+				<div id="resultInfo">
+					<ul>
+						<li>Correct: <span id="correct">0</span> </li> 
+						<li>Incorrect: <span id="incorrect">0</span></li>
+						<li>Attempted: <span id="attempted">0</span></li>
+						<li>Total: <span id="total">0</span></li>
+						<li>Time: <span id="time">0</span></li>
+					</ul>
+					
+					<div id="answers"> </div>
+				</div>
+				<button id="redo" onclick="retry()">Retry Quiz</button>
+			</div>
+		</div>
+	</body>
+</html>
